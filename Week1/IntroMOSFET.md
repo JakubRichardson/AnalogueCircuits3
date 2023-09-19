@@ -1,4 +1,4 @@
-# Introduction to MOSFET
+# Introduction to MOSFETs
 
 MOSFET stands for Metal Oxide Semiconductor FIeld Effect Transistor
 
@@ -6,7 +6,9 @@ MOSFET stands for Metal Oxide Semiconductor FIeld Effect Transistor
     <img src="./MOSFET.png" alt="MOSFET circuit symbol" width="200"/>
 </p>
 
-A MOSFET is a 4-terminal analogue switch. The voltage at the gate (G) controls the current flow between the drain (D) and the source (S). The body or bulk terminal (B) is part of the MOSFET substrate and influences the threshold voltage. This is often connected directly to the source by the MOSFET manufacturer. 
+A MOSFET is a 4-terminal analogue switch. The voltage at the gate (G) controls the current flow between the drain (D) and the source (S). The body or bulk terminal (B) is part of the MOSFET substrate and influences the threshold voltage. This is often connected directly to the source by the MOSFET manufacturer.
+
+>**Note:** If the bulk connection is not shown in a circuit diagram assume it is connected to the source
 
 The following shows the internal structure of an N-channel MOSFET:
 
@@ -88,4 +90,14 @@ $$
 
 ### Saturation Region
 
+When the N-Channel MOSFET is switched on ($V_{GS} > V_{TH}$), if the voltage between the source and drain is sufficiently large:
 
+$$
+V_{DS} > V_{GS} - V_{TH} = V_{OD}
+$$
+
+The MOSFET is said to be in the saturation operating region, and thus follows the following relationship drain current output characteristic relationship (constant with respect to the drain source voltage):
+
+$$
+I_{DS} = \frac{\beta}{2} V_{OD}^{2}
+$$
