@@ -70,11 +70,13 @@ $$
 I_{DS} = \mu_{n} C_{OX} \frac{W}{L} \left((V_{GS} - V_{TH}) - \frac{V_{DS}}{2} \right) V_{DS}
 $$
 
-Defining a device characteristic parameter $\beta$ as:
+As mentioned above, MOSFETs have process parameters related to their manufacture. It is thus useful to define a device characteristic parameter $\beta$ as:
 
 $$
-\beta = \frac{\mu_{n}C_{OX}W}{L}
+\beta = \frac{\mu_{n}C_{OX}W}{L} = k^{\prime}_{n} \frac{W}{L} \qquad k^{\prime}_{n} = \mu_{n} C_{OX}
 $$
+
+>**Note:** Process parameters are subject to manufacturing variation, thus, a major challenge in MOS circuit design is robustness in design with respect to these parameters
 
 The above linear output characteristic equation can be simplified as:
 
@@ -90,10 +92,22 @@ $$
 
 ### Saturation Region
 
-When the N-Channel MOSFET is switched on ($V_{GS} > V_{TH}$), if the voltage between the source and drain is sufficiently large:
+When the N-Channel MOSFET is switched on ($V_{GS} > V_{TH}$), if the voltage between the source and drain $V_{DS}$ is sufficiently large, saturation occurs. 
+
+<p align="center">
+    <img src="./N-MOSFET-PinchOff.png" alt="N-Channel MOSFET Pinch-Off saturation condition" width="400"/>
+</p>
+
+In this case the voltage between the gate and the substrate at the drain is smaller than the threshold voltage and thus the channel thickness becomes zero at that point. This phenomena is called "pinch-off":
 
 $$
-V_{DS} > V_{GS} - V_{TH} = V_{OD}
+V_{GD} = V_{GS} - V_{DS} \le V_{TH}
+$$
+
+Therefore, saturation occurs when:
+
+$$
+V_{DS} \ge V_{GS} - V_{TH} = V_{OD}
 $$
 
 The MOSFET is said to be in the saturation operating region, and thus follows the following relationship drain current output characteristic relationship (constant with respect to the drain source voltage):
