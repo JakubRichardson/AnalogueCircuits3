@@ -1,1 +1,4 @@
 .vscode/
+*.net
+*.log
+*.raw
