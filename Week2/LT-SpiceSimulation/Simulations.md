@@ -135,7 +135,7 @@ Simulating this circuit in LT-Spice produces a graph of $V_{DS}$ (x-axis) vs $I_
 
 As visible in the graph, decreasing $V_{BS}$ increases $V_{TH}$. This reduces the overdrive voltage $|V_{OD}| = |V_{GS}| - |V_{TH}|$, thus appearing as a lower line on the graph. This could be mistaken for decreasing $V_{GS}$.
 
-## $\gamma$ - Body Effect
+## Gamma - Body Effect
 
 We wish to investigate the effect of the parameter $\gamma$ on the threshold voltage $V_{TH}$ and thus the output current $I_{DS}$. We will graph $V_{BS}$ (x-axis) against $I_{DS}$ (y-axis). As seen in the previous section ([body effect](#body-effect)) increasing $V_{BS}$ results in lowering the threshold voltage and thus an increase in drain current $I_{DS}$. We set $V_{GS} = 0V$ and $V_{DS} = 4V$, and sweep $V_{BS}$ from $-5V$ to $0V$ in steps of $0.5V$ using the following directive:
 
