@@ -8,7 +8,7 @@ MOSFET stands for Metal Oxide Semiconductor Field Effect Transistor
 
 A MOSFET is a 4-terminal analogue switch. The voltage at the gate (G) controls the current flow between the drain (D) and the source (S). The body or bulk terminal (B) is part of the MOSFET substrate and influences the threshold voltage. This is often connected directly to the source by the MOSFET manufacturer.
 
->**Note:** If the bulk connection is not shown in a circuit diagram assume it is connected to the source
+>**Note:** The bulk connection can be confusing as it is often not shown. In 3-terminal packaged devices you may assume it is connected to the source. In CMOS analog circuits it is connected to the equivalent potential i.e. GND in N-channel MOSFETs, as to allow for bidirectional current flow.
 
 The following shows the internal structure of an N-channel MOSFET:
 
