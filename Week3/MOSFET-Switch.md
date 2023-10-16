@@ -16,6 +16,31 @@ The sample and hold circuit is an important building block in Analogue to Digita
 
 TODO: Add image
 
+
+>**Note:** In the examples below we will assume $V_{DD} = 3.3V$ and $V_{TH} = 1V$.
+
+#### Falling Output Voltage
+
+Consider the following situation. The input voltage $V_{in} = 0V$ and $V_{out} = V_{DD}$. The difference between the input voltage $V_{in}$ and the output $V_{out}$ is at a maximum. When the clock goes high $Ck = V_{DD}$, the MOSFET will switch on and current will flow from the capacitor to the input. In this situation the output $V_{out}$ is the drain, and input $V_{in}$ is the source.
+
+TODO: Add situation image
+
+At $t=0$, the MOSFET switches from the cut-off to the saturation region as $V_{DS} = V_{DD} > V_{GS} - V_{TH}$. At $t = T$ the MOSFET is in the linear region. The output capacitor discharges completely to match the input voltage.
+
+TODO: Add graph image
+
+#### Increasing Output Voltage
+
+Now consider the case where the input voltage $V_{in} = 1V$ and $V_{out} = 0V$. When the clock goes high $Ck = V_{DD}$, the MOSFET will switch on and current will flow from the input $V_{in}$ to the output capacitor. In this situation the output $V_{out}$ is the source, and $V_{in}$ is the drain.
+
+TODO: Add situation image
+
+At $t=0$, the MOSFET switches from the cut-off to the linear region as $V_{DS} = 1V < V_{GS} - V_{TH} = 2.3V$. At $t = T$ the MOSFET remains in the linear region ($V_{DS} = 0V < V_{GS} - V_{TH} = 1.3V). The output capacitor discharges completely to match the input voltage.
+
+Notice that the propagation of the increased input voltage $V_{in}$ to the output $V_{out}$ has led to a reduction in the overdrive voltage. Further increasing the input voltage $V_{in}$ will further reduce this until the MOSFET switches off. To show this consider the case where the input voltage $V_{in} = V_{DD}$ and $V_{out} = 0V$. As before, the output capacitor will charge up and the output voltage $V_{out}$ will try to match the input $V_{in}$. When the output reaches $V_{DD} - V_{TH} = 2.3V$ the overdrive voltage will be $V_{GS} - V_{TH} = 0V$ and thus the MOSFET will switch off. The output cannot pass the full $V_{DD}$. 
+
+TODO: Add image
+
 ### P-channel Sample and Hold
 
 TODO: Add image
